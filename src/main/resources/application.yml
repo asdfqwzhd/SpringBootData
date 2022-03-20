@@ -11,3 +11,16 @@ spring:
     username: test
     password: test
     url: jdbc:postgresql://localhost:5432/test
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.springbootdata.test.postgres.entity
+
+#showSql
+logging:
+  level:
+    com:
+      springbootdata:
+        test:
+          postgres:
+            mapper: debug

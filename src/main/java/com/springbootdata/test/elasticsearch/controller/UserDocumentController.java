@@ -16,7 +16,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/elasticsearch")
 @RequiredArgsConstructor
-public class UserController {
+public class UserDocumentController {
 
     private final UserRepository userRepository;
 
