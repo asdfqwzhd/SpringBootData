@@ -5,3 +5,9 @@ spring:
       repositories:
         enabled: true
       cluster-name: elasticsearch #需与elasticsearch配置文件的名字一致，也可以不配置
+  application:
+    name: postgres
+  datasource:
+    username: test
+    password: test
+    url: jdbc:postgresql://localhost:5432/test
