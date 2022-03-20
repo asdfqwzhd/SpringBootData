@@ -48,15 +48,30 @@ public class UserController {
     }
 
     /**
-     * 用户登录更新
-     * URL例：POST：http://localhost:8080/elasticsearch/user
+     * 用户登录更新-单用户
+     * URL例：POST：http://localhost:8080/elasticsearch/user/single
+     * RequestBody：user-single-insert.json
      * @param user 用户信息
      * @return 用户列表
      */
-    @PostMapping("/user")
+    @PostMapping("/user/single")
     @ResponseBody
     public String saveUserData(@RequestBody UserDocument user){
         this.userRepository.save(user);
-        return "123";
+        return "SUCCESS";
+    }
+
+    /**
+     * 用户登录更新-多用户
+     * URL例：POST：http://localhost:8080/elasticsearch/user/multiple
+     * RequestBody：user-multiple-insert.json
+     * @param user 用户信息
+     * @return 用户列表
+     */
+    @PostMapping("/user/multiple")
+    @ResponseBody
+    public String saveUserData(@RequestBody List<UserDocument> user){
+        this.userRepository.saveAll(user);
+        return "SUCCESS";
     }
 }

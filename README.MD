@@ -4,6 +4,8 @@
 ## 环境搭建
 ### 配置要求
 如全部在本机配置，本机内存至少16G，16G启动docker电脑会很卡，但不是不能运行，建议内存至少32G。
+### postman
+* postman安装：https://www.postman.com/downloads/
 ### docker
 * docker desktop安装：https://www.docker.com/products/docker-desktop/
 ### elasticsearch & kibana

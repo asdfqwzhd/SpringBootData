@@ -1,0 +1,56 @@
+[
+  {
+    "userId" : "li3319",
+    "userName" : "name3",
+    "company" : {
+      "companyCode" : "G2",
+      "departmentNo" : "dep01",
+      "companyName" : "companyName3"
+    }
+  },
+  {
+    "userId" : "li3314",
+    "userName" : "name1",
+    "company" : {
+      "companyCode" : "G1",
+      "departmentNo" : "dep01",
+      "companyName" : "companyName1"
+    }
+  },
+  {
+    "userId" : "li3318",
+    "userName" : "name4",
+    "company" : {
+      "companyCode" : "G0",
+      "departmentNo" : "dep01",
+      "companyName" : "companyName4"
+    }
+  },
+  {
+    "userId" : "hj9999",
+    "userName" : "name2",
+    "company" : {
+      "companyCode" : "G3",
+      "departmentNo" : "dep01",
+      "companyName" : "companyName2"
+    }
+  },
+  {
+    "userId" : "hj9998",
+    "userName" : "name2",
+    "company" : {
+      "companyCode" : "G3",
+      "departmentNo" : "dep02",
+      "companyName" : "companyName2"
+    }
+  },
+  {
+    "userId" : "hj9997",
+    "userName" : "name2",
+    "company" : {
+      "companyCode" : "G3",
+      "departmentNo" : "dep03",
+      "companyName" : "companyName2"
+    }
+  }
+]
