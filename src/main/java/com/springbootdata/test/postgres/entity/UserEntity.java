@@ -1,5 +1,7 @@
 package com.springbootdata.test.postgres.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.springbootdata.test.common.valueobject.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,8 +9,17 @@ import lombok.Setter;
 @Setter
 public class UserEntity {
 
-    private String userId;
+    private User user;
 
-    private String userName;
+    private Company company;
+
+    private Department department;
+
+    private Period validPeriod;
+
+    private SystemItems systemItems;
+
+    @JsonIgnore
+    private int count;
 
 }
