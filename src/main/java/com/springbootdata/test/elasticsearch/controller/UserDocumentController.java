@@ -1,24 +1,33 @@
 package com.springbootdata.test.elasticsearch.controller;
 
+import com.springbootdata.test.elasticsearch.condition.UserDocumentCondition;
 import com.springbootdata.test.elasticsearch.document.UserDocument;
-import com.springbootdata.test.elasticsearch.repository.UserRepository;
+import com.springbootdata.test.elasticsearch.repository.UserDocumentRepository;
+import com.springbootdata.test.elasticsearch.repository.UserDocumentSearchRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.elasticsearch.core.SearchHit;
+import org.springframework.data.elasticsearch.core.SearchHits;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * elasticsearch检索登录更新
  */
 @Controller
-@RequestMapping("/elasticsearch")
+@RequestMapping("/elasticsearch/user")
 @RequiredArgsConstructor
 public class UserDocumentController {
 
-    private final UserRepository userRepository;
+    private final UserDocumentRepository userDocumentRepository;
+
+    private final UserDocumentSearchRepository userDocumentSearchRepository;
 
     /**
      * 全部用户取得（可指定翻页，顺序）
@@ -26,10 +35,9 @@ public class UserDocumentController {
      * @param pageable 翻页信息
      * @return 用户列表
      */
-    @GetMapping("/user")
     @ResponseBody
     public List<UserDocument> getAllUser(Pageable pageable){
-        Page<UserDocument> userDocumentPage = this.userRepository.findAll(pageable);
+        Page<UserDocument> userDocumentPage = this.userDocumentRepository.findAll(pageable);
         List<UserDocument> userDocuments = userDocumentPage.getContent();
         return userDocuments;
     }
@@ -40,38 +48,33 @@ public class UserDocumentController {
      * @param userId 用户Id
      * @return 用户列表
      */
-    @GetMapping("/user/{userId}")
+    @GetMapping("/{userId}")
     @ResponseBody
     public UserDocument getUserByUserId(@PathVariable(value = "userId") String userId){
-        UserDocument userDocument = this.userRepository.findById(userId).get();
+        UserDocument userDocument = this.userDocumentRepository.findById(userId).get();
         return userDocument;
     }
 
     /**
-     * 用户登录更新-单用户
-     * URL例：POST：http://localhost:8080/elasticsearch/user/single
-     * RequestBody：user-single-insert.json
-     * @param user 用户信息
-     * @return 成功
+     * 用户取得
+     * URL例：GET：http://localhost:8080/elasticsearch/user/hj9999
+     * @return 用户列表
      */
-    @PostMapping("/user/single")
+    @GetMapping("/by-query")
     @ResponseBody
-    public String saveSingleUser(@RequestBody UserDocument user){
-        this.userRepository.save(user);
-        return "SUCCESS";
+    public List<UserDocument> getUserByQuery(@RequestParam(value="insertDay", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate insertDay,
+                                             @RequestParam(value="userId", required = false) String userId,
+                                             @RequestParam(value="companyCode", required = false) String companyCode,
+                                             @RequestParam(value="departmentNo", required = false) String departmentNo,
+                                             @RequestParam(value="isGivenUser", required = false) Boolean isGivenUser){
+        UserDocumentCondition userDocumentCondition = new UserDocumentCondition();
+        userDocumentCondition.setInsertDay(insertDay);
+        userDocumentCondition.setUserId(userId);
+        userDocumentCondition.setCompanyCode(companyCode);
+        userDocumentCondition.setDepartmentNo(departmentNo);
+        userDocumentCondition.setIsGivenUser(isGivenUser);
+        SearchHits<UserDocument> searchHits = this.userDocumentSearchRepository.findByQuery(userDocumentCondition);
+        return searchHits.get().map(SearchHit::getContent).collect(Collectors.toList());
     }
 
-    /**
-     * 用户登录更新-多用户
-     * URL例：POST：http://localhost:8080/elasticsearch/user/multiple
-     * RequestBody：user-multiple-insert.json
-     * @param users 用户信息列表
-     * @return 成功
-     */
-    @PostMapping("/user/multiple")
-    @ResponseBody
-    public String saveMultipleUser(@RequestBody List<UserDocument> users){
-        this.userRepository.saveAll(users);
-        return "SUCCESS";
-    }
 }
