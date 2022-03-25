@@ -1,56 +1,116 @@
 [
   {
-    "userId" : "li3319",
-    "userName" : "name3",
+    "user" : {
+      "userId" : "li3319",
+      "userName" : "name3"
+    },
     "company" : {
       "companyCode" : "G2",
-      "departmentNo" : "dep01",
-      "companyName" : "companyName3"
+      "companyName" : "companyNameG2"
+    },
+    "department" : {
+      "companyCode" : "G2",
+      "departmentNo" : "QA01",
+      "departmentName" : "departmentNameG2-QA01"
+    },
+    "validPeriod" : {
+      "startDay" : "2022-03-01",
+      "endDay" : "2022-03-31"
     }
   },
   {
-    "userId" : "li3314",
-    "userName" : "name1",
+    "user" : {
+      "userId" : "li3314",
+      "userName" : "name1"
+    },
     "company" : {
       "companyCode" : "G1",
-      "departmentNo" : "dep01",
-      "companyName" : "companyName1"
+      "companyName" : "companyNameG1"
+    },
+    "department" : {
+      "companyCode" : "G1",
+      "departmentNo" : "QA01",
+      "departmentName" : "departmentNameG1-QA01"
+    },
+    "validPeriod" : {
+      "startDay" : "2022-03-01",
+      "endDay" : "2022-03-31"
     }
   },
   {
-    "userId" : "li3318",
-    "userName" : "name4",
+    "user" : {
+      "userId" : "li3318",
+      "userName" : "name4"
+    },
     "company" : {
       "companyCode" : "G0",
-      "departmentNo" : "dep01",
-      "companyName" : "companyName4"
+      "companyName" : "companyNameG0"
+    },
+    "department" : {
+      "companyCode" : "G0",
+      "departmentNo" : "QA01",
+      "departmentName" : "departmentNameG0-QA01"
+    },
+    "validPeriod" : {
+      "startDay" : "2022-03-01",
+      "endDay" : "2022-03-31"
     }
   },
   {
-    "userId" : "hj9999",
-    "userName" : "name2",
+    "user" : {
+      "userId" : "hj9999",
+      "userName" : "name2"
+    },
     "company" : {
       "companyCode" : "G3",
-      "departmentNo" : "dep01",
-      "companyName" : "companyName2"
+      "companyName" : "companyNameG3"
+    },
+    "department" : {
+      "companyCode" : "G3",
+      "departmentNo" : "QA03",
+      "departmentName" : "departmentNameG3-QA03"
+    },
+    "validPeriod" : {
+      "startDay" : "2022-03-01",
+      "endDay" : "2022-03-31"
     }
   },
   {
-    "userId" : "hj9998",
-    "userName" : "name2",
+    "user" : {
+      "userId" : "hj9998",
+      "userName" : "name2"
+    },
     "company" : {
       "companyCode" : "G3",
-      "departmentNo" : "dep02",
-      "companyName" : "companyName2"
+      "companyName" : "companyNameG3"
+    },
+    "department" : {
+      "companyCode" : "G3",
+      "departmentNo" : "QA02",
+      "departmentName" : "departmentNameG3-QA02"
+    },
+    "validPeriod" : {
+      "startDay" : "2022-03-01",
+      "endDay" : "2022-03-31"
     }
   },
   {
-    "userId" : "hj9997",
-    "userName" : "name2",
+    "user" : {
+      "userId" : "hj9997",
+      "userName" : "name2"
+    },
     "company" : {
       "companyCode" : "G3",
-      "departmentNo" : "dep03",
-      "companyName" : "companyName2"
+      "companyName" : "companyNameG3"
+    },
+    "department" : {
+      "companyCode" : "G3",
+      "departmentNo" : "QA01",
+      "departmentName" : "departmentNameG3-QA01"
+    },
+    "validPeriod" : {
+      "startDay" : "2022-03-01",
+      "endDay" : "2022-03-31"
     }
   }
 ]

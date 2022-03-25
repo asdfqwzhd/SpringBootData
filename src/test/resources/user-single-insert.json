@@ -1,9 +1,19 @@
 {
-  "userId" : "hj9997",
-  "userName" : "name2",
+  "user" : {
+    "userId" : "hj9997",
+    "userName" : "name2"
+  },
   "company" : {
     "companyCode" : "G3",
-    "departmentNo" : "dep03",
-    "companyName" : "companyName2"
+    "companyName" : "companyNameG3"
+  },
+  "department" : {
+    "companyCode" : "G3",
+    "departmentNo" : "QA01",
+    "departmentName" : "departmentNameG3-QA01"
+  },
+  "validPeriod" : {
+    "startDay" : "2022-03-01",
+    "endDay" : "2022-03-31"
   }
 }
