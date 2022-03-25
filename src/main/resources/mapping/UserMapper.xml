@@ -3,8 +3,17 @@
 <mapper namespace="com.springbootdata.test.postgres.mapper.UserMapper">
 
     <resultMap id="UserResultMap" type="com.springbootdata.test.postgres.entity.UserEntity">
-        <result column="user_id" jdbcType="VARCHAR" property="userId" />
-        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+        <result column="user_id" jdbcType="VARCHAR" property="user.userId" />
+        <result column="user_name" jdbcType="VARCHAR" property="user.userName" />
+        <result column="company_code" jdbcType="VARCHAR" property="company.companyCode" />
+        <result column="company_name" jdbcType="VARCHAR" property="company.companyName" />
+        <result column="department_company_code" jdbcType="VARCHAR" property="department.companyCode" />
+        <result column="department_no" jdbcType="VARCHAR" property="department.departmentNo" />
+        <result column="department_name" jdbcType="VARCHAR" property="department.departmentName" />
+        <result column="valid_start_day" jdbcType="VARCHAR" property="validPeriod.startDay" />
+        <result column="valid_end_day" jdbcType="VARCHAR" property="validPeriod.endDay" />
+        <result column="insert_date_time" jdbcType="VARCHAR" property="systemItems.insertDateTime" />
+        <result column="update_date_time" jdbcType="VARCHAR" property="systemItems.updateDateTime" />
     </resultMap>
 
 <!--    <select id="sel" resultType="com.springbootdata.test.postgres.entity.UserEntity">-->
@@ -14,5 +23,25 @@
     <select id="sel" resultMap="UserResultMap">
         select * from "user" where user_id = #{id}
     </select>
+
+    <insert id="insert" >
+        insert into "user" (user_id, user_name, company_code, company_name, department_company_code, department_no, department_name, valid_start_day, valid_end_day, insert_date_time, update_date_time)
+        values (#{user.userId}, #{user.userName}, #{company.companyCode}, #{company.companyName}, #{department.companyCode}, #{department.departmentNo}, #{department.departmentName}, #{validPeriod.startDay}, #{validPeriod.endDay}, #{systemItems.insertDateTime}, #{systemItems.updateDateTime})
+    </insert>
+
+    <insert id="save" >
+        <selectKey keyProperty="count" resultType="int" order="BEFORE">
+            select count(*) from "user" where user_id = #{user.userId}
+        </selectKey>
+        <if test="count > 0">
+            update "user"
+            set user_name = #{user.userName}, company_code = #{company.companyCode}, company_name = #{company.companyName}, department_company_code = #{department.companyCode}, department_no = #{department.departmentNo}, department_name = #{department.departmentName}, valid_start_day = #{validPeriod.startDay}, valid_end_day = #{validPeriod.endDay}, update_date_time = #{systemItems.updateDateTime}
+            where user_id = #{user.userId}
+        </if>
+        <if test="count == 0">
+            insert into "user" (user_id, user_name, company_code, company_name, department_company_code, department_no, department_name, valid_start_day, valid_end_day, insert_date_time, update_date_time)
+            values (#{user.userId}, #{user.userName}, #{company.companyCode}, #{company.companyName}, #{department.companyCode}, #{department.departmentNo}, #{department.departmentName}, #{validPeriod.startDay}, #{validPeriod.endDay}, #{systemItems.insertDateTime}, #{systemItems.updateDateTime})
+        </if>
+    </insert>
 
 </mapper>
