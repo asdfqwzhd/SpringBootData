@@ -1,9 +1,9 @@
-package com.springbootdata.test.elasticsearch.controller;
+package com.springbootdata.elasticsearch.controller;
 
-import com.springbootdata.test.elasticsearch.condition.UserDocumentCondition;
-import com.springbootdata.test.elasticsearch.document.UserDocument;
-import com.springbootdata.test.elasticsearch.repository.UserDocumentRepository;
-import com.springbootdata.test.elasticsearch.repository.UserDocumentSearchRepository;
+import com.springbootdata.elasticsearch.condition.UserDocumentCondition;
+import com.springbootdata.elasticsearch.document.UserDocument;
+import com.springbootdata.elasticsearch.repository.UserDocumentRepository;
+import com.springbootdata.elasticsearch.repository.UserDocumentSearchRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -1,4 +1,4 @@
-package com.springbootdata.test.elasticsearch.condition;
+package com.springbootdata.elasticsearch.condition;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

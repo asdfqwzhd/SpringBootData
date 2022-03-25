@@ -1,7 +1,7 @@
-package com.springbootdata.test.elasticsearch.repository;
+package com.springbootdata.elasticsearch.repository;
 
-import com.springbootdata.test.elasticsearch.condition.UserDocumentCondition;
-import com.springbootdata.test.elasticsearch.document.UserDocument;
+import com.springbootdata.elasticsearch.condition.UserDocumentCondition;
+import com.springbootdata.elasticsearch.document.UserDocument;
 import lombok.RequiredArgsConstructor;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;

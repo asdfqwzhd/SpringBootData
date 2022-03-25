@@ -1,6 +1,6 @@
-package com.springbootdata.test.postgres.mapper;
+package com.springbootdata.postgres.mapper;
 
-import com.springbootdata.test.postgres.entity.UserEntity;
+import com.springbootdata.postgres.entity.UserEntity;
 import org.springframework.stereotype.Repository;
 
 @Repository

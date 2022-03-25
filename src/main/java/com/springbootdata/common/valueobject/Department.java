@@ -1,4 +1,4 @@
-package com.springbootdata.test.common.valueobject;
+package com.springbootdata.common.valueobject;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,11 +11,14 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Company {
+public class Department {
 
     @Field(type = FieldType.Keyword)
     private String companyCode;
 
     @Field(type = FieldType.Keyword)
-    private String companyName;
+    private String departmentNo;
+
+    @Field(type = FieldType.Keyword)
+    private String departmentName;
 }

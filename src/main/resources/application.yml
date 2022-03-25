@@ -14,7 +14,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
-  type-aliases-package: com.springbootdata.test.postgres.entity
+  type-aliases-package: com.springbootdata.postgres.entity
 
 #showSql
 logging:

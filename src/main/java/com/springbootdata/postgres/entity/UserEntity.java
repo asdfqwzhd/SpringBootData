@@ -1,7 +1,7 @@
-package com.springbootdata.test.postgres.entity;
+package com.springbootdata.postgres.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.springbootdata.test.common.valueobject.*;
+import com.springbootdata.common.valueobject.*;
 import lombok.Getter;
 import lombok.Setter;
 

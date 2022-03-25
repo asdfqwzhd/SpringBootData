@@ -1,9 +1,8 @@
-package com.springbootdata.test.elasticsearch.document;
+package com.springbootdata.elasticsearch.document;
 
-import com.springbootdata.test.common.valueobject.*;
+import com.springbootdata.common.valueobject.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;

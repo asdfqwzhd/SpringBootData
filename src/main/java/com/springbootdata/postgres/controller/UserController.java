@@ -1,10 +1,10 @@
-package com.springbootdata.test.postgres.controller;
+package com.springbootdata.postgres.controller;
 
-import com.springbootdata.test.common.valueobject.SystemItems;
-import com.springbootdata.test.elasticsearch.document.UserDocument;
-import com.springbootdata.test.elasticsearch.repository.UserDocumentRepository;
-import com.springbootdata.test.postgres.entity.UserEntity;
-import com.springbootdata.test.postgres.mapper.UserMapper;
+import com.springbootdata.postgres.entity.UserEntity;
+import com.springbootdata.common.valueobject.SystemItems;
+import com.springbootdata.elasticsearch.document.UserDocument;
+import com.springbootdata.elasticsearch.repository.UserDocumentRepository;
+import com.springbootdata.postgres.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

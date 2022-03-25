@@ -1,4 +1,4 @@
-package com.springbootdata.test.common.valueobject;
+package com.springbootdata.common.valueobject;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
