@@ -66,13 +66,15 @@ public class UserDocumentController {
                                              @RequestParam(value="userId", required = false) String userId,
                                              @RequestParam(value="companyCode", required = false) String companyCode,
                                              @RequestParam(value="departmentNo", required = false) String departmentNo,
-                                             @RequestParam(value="isGivenUser", required = false) Boolean isGivenUser){
+                                             @RequestParam(value="isGivenUser", required = false) Boolean isGivenUser,
+                                             @RequestParam(value="hasUserName", required = false) Boolean hasUserName){
         UserDocumentCondition userDocumentCondition = new UserDocumentCondition();
         userDocumentCondition.setInsertDay(insertDay);
         userDocumentCondition.setUserId(userId);
         userDocumentCondition.setCompanyCode(companyCode);
         userDocumentCondition.setDepartmentNo(departmentNo);
         userDocumentCondition.setIsGivenUser(isGivenUser);
+        userDocumentCondition.setHasUserName(hasUserName);
         SearchHits<UserDocument> searchHits = this.userDocumentSearchRepository.findByQuery(userDocumentCondition);
         return searchHits.get().map(SearchHit::getContent).collect(Collectors.toList());
     }

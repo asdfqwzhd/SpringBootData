@@ -15,4 +15,5 @@ public class UserDocumentCondition {
     private String companyCode;
     private String departmentNo;
     private Boolean isGivenUser;
+    private Boolean hasUserName;
 }

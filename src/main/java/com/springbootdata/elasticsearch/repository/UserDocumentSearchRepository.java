@@ -49,6 +49,9 @@ public class UserDocumentSearchRepository {
             if (StringUtils.hasText(userDocumentCondition.getUserId())) {
                 boolQueryBuilder.must(QueryBuilders.termQuery("user.userId",userDocumentCondition.getUserId()));
             }
+            if (Boolean.TRUE.equals(userDocumentCondition.getHasUserName())) {
+                boolQueryBuilder.must(QueryBuilders.existsQuery("user.userName"));
+            }
         }
 
         NativeSearchQueryBuilder nativeSearchQueryBuilder = new NativeSearchQueryBuilder();
